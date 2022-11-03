@@ -1,21 +1,21 @@
 import express from "express";
+import morgan from "morgan";
+import globalRouter from "./routers/globalRouter";
+import videoRouter from "./routers/videoRouter";
+import userRouter from "./routers/userRouter";
 
 const PORT = 4000;
 
 const app = express();
-
-const logger = (req, res, next) => { 
-  console.log(`${req.method}  ${req.url}`);
-  //return res.send("lalala");
-  next();
-};
-
-const handleHome = (req, res) => {
-  return res.send("I Love Middlewares");
-};
+const logger = morgan("dev");
+app.use(logger);
 
 
-app.get("/",logger, handleHome);  //use 후 get사용
+app.use("/", globalRouter); // '/'으로 시작하는 url이 있으면 글로벌라우터로
+app.use("/videos", videoRouter); // 'videos'로 시작하는 url이 있으면 videoRouter로 이동
+app.use("/users", userRouter);
+
+
 
 
 const handleListening = () =>
