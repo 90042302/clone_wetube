@@ -3,13 +3,8 @@ include mixins/video
 
 block content
 
-    body 
-        header 
 
-            nav 
-                ul 
-                    li 
-                        a(href="/videos/upload") Upload Video
+
 
     each x in videos
         +video(x)
