@@ -56,7 +56,9 @@ export const postLogin = async(req, res) => {
         {pageTitle,
         errorMessage:"잘못된 password입니다."});
     }
-    console.log("로그인 되었습니다. 잠시만 기다려주세요!");
+    
+    req.session.loggedIn = true;
+    req.session.user = user;
     return res.redirect("/");
 };
 

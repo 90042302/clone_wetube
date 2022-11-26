@@ -6,14 +6,26 @@ html(lang="ko")
     body 
         header 
             h1=pageTitle
+
             nav
                 span
                     a(href="/") HOME
-                
+
+                ul
+
             nav
-                ul 
-                    li 
-                        a(href="/join") JOIN
+                ul
+                    if loggedIn
+                        li 
+                            a(href="/logout") LOGOUT
+                        li 
+                            a(href="/my-profile") #{loggedInUser.name}의 프로필
+
+                    else
+                        li 
+                            a(href="/join") JOIN
+                        li 
+                            a(href="/login") LOGIN
 
                     li
                         a(href="/search") SEARCH     
