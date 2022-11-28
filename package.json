@@ -4,7 +4,7 @@
     "description": "The best way to watch videos",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/90042302/wetube-reloaded"
+        "url": "git+https://github.com/90042302/clone_wetube"
     },
     "scripts": {
         "dev": "nodemon --exec babel-node src/init.js"
@@ -12,9 +12,9 @@
     "author": "MINJI",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/90042302/wetube-reloaded/issues"
+        "url": "https://github.com/90042302/clone_wetube"
     },
-    "homepage": "https://github.com/90042302/wetube-reloaded#readme",
+    "homepage": "https://github.com/90042302/clone_wetube#readme",
     "dependencies": {
         "bcrypt": "^5.1.0",
         "connect-mongo": "^4.6.0",
