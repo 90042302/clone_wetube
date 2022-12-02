@@ -1,7 +1,9 @@
 import User from "../models/User";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
+
 export const getJoin = (req, res) => res.render("join", { pageTitle: "Join" });
+
 export const postJoin = async (req, res) => {
   const { name, username, email, password, password2, location } = req.body;
   const pageTitle = "Join";
@@ -15,7 +17,7 @@ export const postJoin = async (req, res) => {
   if (exists) {
     return res.status(400).render("join", {
       pageTitle,
-      errorMessage: "This username/email is already taken.",
+      errorMessage: "이미 사용하는 username 또는 Email 입니다.",
     });
   }
   try {
@@ -36,6 +38,8 @@ export const postJoin = async (req, res) => {
 };
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Login" });
+
+
 export const postLogin = async (req, res) => {
   const { username, password } = req.body;
   const pageTitle = "Login";
@@ -57,6 +61,8 @@ export const postLogin = async (req, res) => {
   req.session.user = user;
   return res.redirect("/");
 };
+
+
 export const startGithubLogin = (req, res) => {
   const baseUrl = "https://github.com/login/oauth/authorize";
   const config = {
@@ -132,5 +138,51 @@ export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect("/");
 };
-export const edit = (req, res) => res.send("Edit User");
+
+export const getEdit = (req, res) => {
+  return res.render("edit-profile",{ pageTitle:"Edit Profile" });
+};
+
+export const postEdit = async (req, res) => {
+  const { 
+    session:{
+      user : {_id, email:sessionEmail, username:sessionUsername},
+     },
+     body : { name,email,username,location },
+    } = req;
+
+  let searchParam = [];
+  if(sessionEmail !== email){
+    searchParam.push({email});
+  }
+  if(sessionUsername !== username){
+    searchParam.push({username});
+  }
+
+  if(searchParam.lenth > 0){
+    const foundUser = await User.findOne({$or:searchParam});
+    if(foundUser && foundUser._id>toString() !== _id){
+      return res.status(HTTP_BAD_REQUEST).render("edit-profile",{
+        pageTitle : "Edit Profile",
+        errorMessage : "이미 사용하는 username 또는 Email 입니다.",
+      });
+    }
+  }
+
+
+  const updatedUser = await User.findByIdAndUpdate(_id, {
+    name, 
+    email, 
+    username, 
+    location,
+  },
+  { new : true }
+  );
+  req.session.user = updatedUser;
+  return res.redirect("/users/edit");
+};
+
+
+
+//export const edit = (req, res) => res.send("Edit User");
 export const see = (req, res) => res.send("See User");
