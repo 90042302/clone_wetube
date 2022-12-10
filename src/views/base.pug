@@ -2,46 +2,14 @@ doctype html
 html(lang="ko")
     head 
         title #{pageTitle} | Wetube
-        link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css")
+        link(rel="stylesheet", href="/your-path-to-uicons/css/uicons-[your-style].css")
         link(rel="stylesheet", href="/static/css/styles.css")
     body 
-        header 
-            h1=pageTitle
-
-            nav
-                span
-                    a(href="/") HOME
-
-                ul
-
-            nav
-                ul
-                    if loggedIn
-
-                        li 
-                            a(href="/users/logout") LOGOUT
-                        li 
-                            a(href="/users/edit") EDIT_PROFILE
-
-                        li 
-                            a(href=`/users/${loggedInUser._id}`) MY_PROFILE
-
-                        li 
-                            a(href="/videos/upload") UPLOAD_VIDEO  
-
-
-                    else
-                        li 
-                            a(href="/join") JOIN
-                        li 
-                            a(href="/login") LOGIN
-
-                    li
-                        a(href="/search") SEARCH     
-                
+        include partials/header.pug
 
         main 
             block content
-    include partials/footer.pug
+        include partials/footer.pug
 
     script(src="/static/js/main.js")

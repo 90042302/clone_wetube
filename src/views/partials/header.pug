@@ -1,0 +1,31 @@
+header
+    a(href="/").header__logo
+        img(src="https://cdn-icons-png.flaticon.com/512/777/777242.png")
+
+
+    nav
+        ul
+            if loggedIn
+                li 
+                    a(href="/users/logout") LOGOUT
+                li 
+                    a(href="/users/edit") EDIT_PROFILE
+
+                li 
+                    a(href=`/users/${loggedInUser._id}`) MY_PROFILE
+
+                li 
+                    a(href="/videos/upload") UPLOAD_VIDEO
+                li
+                    a(href="/search") SEARCH
+                        i.fi.fi-bs-search-heart
+
+
+            else
+                li 
+                    a(href="/login") LOGIN
+                li
+                    a(href="/join").header__btn  Join
+
+
+    

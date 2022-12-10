@@ -1,0 +1,37 @@
+header {
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header__logo {
+      color: $green;
+      width : 16px;
+      height: 16px;
+      img {
+        width : 55px;
+        height: 55px;
+      }
+    }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      li {
+        margin-left: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      img {
+        width : 16px;
+        height: 16px;
+      }
+    }
+    .header__btn {
+      background-color: white;
+      color: $bg;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  }

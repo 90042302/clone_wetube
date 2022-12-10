@@ -215,15 +215,15 @@ export const postChangePasswor = async (req, res) => {
 
 //export const edit = (req, res) => res.send("Edit User");
 export const see = async (req, res) => {
-  const {id} = req.params;
-  const user = await User.findById(id).populate("videos");
-  if(!user){
-    return res.status(404).render("404",{pageTitle:"User not found"});
-  };
-  return res.render("profile",{
-    pageTitle:user.name, 
-    user,
-
+  const { id } = req.params;
+  const user = await User.findById(id).populate({
+    path: "videos",
+    populate: {
+      path: "owner",
+      model: "User",
+    },
   });
-
-};
+  if (!user) {
+    return res.status(404).render("404", { pageTitle: "User not found." });
+  };
+}
