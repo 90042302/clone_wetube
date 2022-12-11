@@ -72,7 +72,7 @@ table {
 }
 
 header {
-  padding: 20px 60px;
+  padding: 20px 50px 10px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,7 +171,7 @@ form:not(.search__form) {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-input {
+input:not(input[type=range]) {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;
@@ -182,7 +182,7 @@ input {
   color: white;
   width: 90%;
 }
-input::placeholder {
+input:not(input[type=range])::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -282,4 +282,9 @@ main {
   width: 100%;
   margin: 0 auto;
   margin-top: 50px;
+}
+
+footer img {
+  width: 50px;
+  height: 50px;
 }
