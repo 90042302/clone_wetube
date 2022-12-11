@@ -97,15 +97,16 @@ header ul li {
   font-weight: 600;
   text-transform: uppercase;
 }
-header ul img {
-  width: 16px;
-  height: 16px;
-}
 header .header__btn {
   background-color: white;
   color: #191919;
   padding: 5px 10px;
   border-radius: 5px;
+}
+header .header__avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 0%;
 }
 
 footer {
@@ -156,7 +157,7 @@ footer {
 .avatar {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 0%;
 }
 
 form {

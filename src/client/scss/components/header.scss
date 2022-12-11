@@ -23,15 +23,18 @@ header {
         font-weight: 600;
         text-transform: uppercase;
       }
-      img {
-        width : 16px;
-        height: 16px;
-      }
+
     }
     .header__btn {
       background-color: white;
       color: $bg;
       padding: 5px 10px;
       border-radius: 5px;
+    }
+
+  .header__avatar{
+    width : 55px;
+    height: 55px;
+    border-radius: 0%;
     }
   }

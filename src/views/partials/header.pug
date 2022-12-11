@@ -12,14 +12,17 @@ header
                     a(href="/users/edit") EDIT_PROFILE
 
                 li 
-                    a(href=`/users/${loggedInUser._id}`) MY_PROFILE
-
-                li 
                     a(href="/videos/upload") UPLOAD_VIDEO
                 li
-                    a(href="/search") SEARCH
+                    a(href="/search") 찾기 
                         i.fi.fi-bs-search-heart
 
+                li 
+                    a(href=`/users/${loggedInUser._id}`)
+                        if loggedInUser.avatarUrl === ""
+                            span 😀
+                        else
+                            img.header__avatar(src="/" + loggedInUser.avatarUrl)
 
             else
                 li 
