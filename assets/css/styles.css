@@ -21,6 +21,14 @@
 /*!**************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/scss/styles.scss (5) ***!
   \**************************************************************************************************************************/
+@import url(https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css);
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/scss/styles.scss (6) ***!
+  \**************************************************************************************************************************/
+@import url(https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css);
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/client/scss/styles.scss (7) ***!
+  \**************************************************************************************************************************/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -72,7 +80,7 @@ table {
 }
 
 header {
-  padding: 20px 50px 10px 50px;
+  padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,17 +91,21 @@ header .header__logo {
   height: 16px;
 }
 header .header__logo img {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
 }
 header ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+header ul img {
+  width: 18px;
+  height: 18px;
+}
 header ul li {
   margin-left: 30px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -104,8 +116,8 @@ header .header__btn {
   border-radius: 5px;
 }
 header .header__avatar {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 0%;
 }
 
@@ -234,6 +246,10 @@ input[type=submit],
   background-color: rgba(0, 0, 0, 0);
   text-align: center;
   cursor: pointer;
+}
+.search__form img {
+  width: 18px;
+  width: 18px;
 }
 
 .profile__data {
