@@ -235,6 +235,27 @@ input[type=submit]:disabled,
   color: azure;
 }
 
+.github_login {
+  background-color: transparent;
+  color: azure;
+  padding-top: 15px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.github_login img {
+  height: 15px;
+  width: 20px;
+}
+
+.account {
+  margin-top: 30px;
+  margin: 600px;
+}
+.account img {
+  height: 30px;
+  width: 30px;
+}
+
 #videoContainer {
   width: 100%;
   position: relative;
@@ -354,6 +375,7 @@ form label {
   color: #191919;
   padding: 10px 10px;
   border-radius: 5px;
+  width: 397px;
 }
 
 .upload__container {
@@ -392,4 +414,32 @@ main {
 footer img {
   width: 50px;
   height: 50px;
+}
+
+@keyframes goAway {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+.message {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 200px;
+  padding: 10px 20px;
+  border-radius: 10000px;
+  text-align: center;
+  animation: goAway 0.5s ease-in-out forwards;
+  animation-delay: 5s;
+}
+.message.error {
+  background-color: tomato;
+  color: white;
 }
