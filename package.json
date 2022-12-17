@@ -7,8 +7,12 @@
         "url": "git+https://github.com/90042302/clone_wetube"
     },
     "scripts": {
+        "start" : "node build/init.js",
+        "build" : "npm run build:server && npm run build:assets",
         "dev:server": "nodemon",
-        "dev:assets": "webpack"
+        "build:server": "babel src -d build",
+        "build:assets" :"webpack --mode=production",
+        "dev:assets": "webpack --mode=development -w"
     },
     "author": "MINJI",
     "license": "MIT",
@@ -36,7 +40,8 @@
         "regenerator-runtime": "^0.13.11"
     },
     "devDependencies": {
-        "@babel/core": "^7.19.6",
+        "@babel/cli": "^7.19.3",
+        "@babel/core": "^7.20.5",
         "@babel/node": "^7.19.1",
         "@babel/preset-env": "^7.19.4",
         "babel-loader": "^9.1.0",
