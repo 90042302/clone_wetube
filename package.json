@@ -7,11 +7,11 @@
         "url": "git+https://github.com/90042302/clone_wetube"
     },
     "scripts": {
-        "start" : "node build/init.js",
-        "build" : "npm run build:server && npm run build:assets",
+        "start": "node build/init.js",
+        "build": "npm run build:server && npm run build:assets",
         "dev:server": "nodemon",
         "build:server": "babel src -d build",
-        "build:assets" :"webpack --mode=production",
+        "build:assets": "webpack --mode=production",
         "dev:assets": "webpack --mode=development -w"
     },
     "author": "MINJI",
@@ -24,7 +24,7 @@
         "@ffmpeg/core": "^0.11.0",
         "@ffmpeg/ffmpeg": "^0.11.6",
         "@flaticon/flaticon-uicons": "^1.7.0",
-        "bcrypt": "^5.1.0",
+        "bcryptjs": "^2.4.3",
         "connect-mongo": "^4.6.0",
         "cross-fetch": "^3.1.5",
         "dotenv": "^16.0.3",
