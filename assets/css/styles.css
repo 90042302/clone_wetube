@@ -378,6 +378,12 @@ form label {
   width: 397px;
 }
 
+.account_f {
+  width: 50px;
+  height: 550px;
+  align-items: center;
+}
+
 .upload__container {
   width: 100%;
 }
