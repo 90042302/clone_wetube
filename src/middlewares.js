@@ -18,7 +18,7 @@ const s3ImageUploader = multerS3({
   
   const s3VideoUploader = multerS3({
     s3: s3,
-    bucket: "wetubeee/videos",
+    bucket: "wetube-mj",
     acl: "public-read",
   });
 
